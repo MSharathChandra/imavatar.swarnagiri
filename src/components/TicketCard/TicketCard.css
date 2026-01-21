@@ -1,0 +1,164 @@
+.ticketCard {
+  background: #fff;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.ticketCardTop {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.ticketThumb {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  background: #eaeaea;
+  min-height: 210px;
+}
+
+.ticketThumbFill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #9db7ff, #c9d6ff);
+}
+
+.ticketTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  color: #111;
+}
+
+.ticketTitleRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ticketTitle {
+  font-size: 26px;
+  font-weight: 900;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.ticketPrice {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ff6b63;
+}
+
+.ticketSubTabs {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: #f4f4f4;
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.ticketSubTab {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 900;
+  color: #c2c2c2;
+  letter-spacing: 0.6px;
+  padding: 4px 6px;
+  border-radius: 10px;
+}
+
+.ticketSubTab.active {
+  color: #ff6b63;
+}
+
+.ticketCTA {
+  margin-top: 16px;
+  width: 100%;
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 16px 18px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  cursor: pointer;
+}
+
+.ticketArrow {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.ticketCardBottom {
+  background: #ff6b63;
+  padding: 16px 18px 18px;
+  color: #fff;
+  position: relative;
+}
+
+.ticketCardBottom::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ff6b63;
+}
+
+.ticketQuote {
+  font-style: italic;
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+.ticketMetaRow {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ticketMeta {
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  opacity: 0.95;
+}
+
+.ticketDays {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+@media (max-width: 1100px) {
+  .ticketCardTop {
+    grid-template-columns: 1fr;
+  }
+  .ticketThumb {
+    min-height: 220px;
+  }
+}

@@ -1,0 +1,36 @@
+.tabsWrap {
+  height: 56px;
+  background: #ff6b63; /* coral/red bar */
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.tabItem {
+  flex: 1; /* equal-width tabs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+
+  border-bottom: 4px solid transparent; /* space for active underline */
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.tabItem:last-child {
+  border-right: none;
+}
+
+.tabItem:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.tabItem.active {
+  border-bottom-color: #e90c0c; /* active underline like screenshot */
+  color: #fff;
+}

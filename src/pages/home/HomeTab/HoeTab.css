@@ -1,0 +1,223 @@
+/* Page background like screenshot */
+.homeShell {
+  background: #f4f4f4;
+  padding: 26px 34px 34px;
+}
+
+/* Top row spacing */
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Language block */
+.langPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #a0a0a0;
+  font-weight: 600;
+}
+
+.langSquare {
+  width: 34px;
+  height: 34px;
+  border: 2px solid #cfcfcf;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background: transparent;
+}
+
+.langA,
+.langHi {
+  font-weight: 800;
+  color: #8e8e8e;
+  font-size: 14px;
+}
+
+.langSep {
+  color: #b0b0b0;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.langText {
+  font-size: 26px; /* bigger like screenshot */
+  color: #b0b0b0;
+  line-height: 1;
+}
+
+.langCaret {
+  font-size: 18px;
+  color: #b0b0b0;
+  transform: translateY(2px);
+}
+
+/* Search bar */
+.searchWrap {
+  flex: 1;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dadada;
+  border-radius: 16px;
+  padding: 0 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.searchIcon {
+  width: 46px;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 18px;
+  opacity: 0.55;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 18px;
+  color: #555;
+}
+
+.searchInput::placeholder {
+  color: #b7b7b7;
+}
+
+.micBtn {
+  width: 46px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 22px;
+  color: #ff5a5f; /* red mic like screenshot */
+  opacity: 0.95;
+}
+
+/* Cards row layout */
+.cardsRow {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+}
+
+/* Row 1: 4 cards */
+.cardsRow4 {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+}
+
+/* Row 2: 3 cards (like screenshot) */
+.cardsRow3 {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+}
+
+/* Keep same card style; allow long titles to fit */
+.homeCardBigTitle .cardTitle {
+  font-size: 34px; /* slightly smaller for "Seva Electronic DIP" */
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .cardsRow4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cardsRow3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cardsRow4,
+  .cardsRow3 {
+    grid-template-columns: 1fr;
+  }
+  .homeCardBigTitle .cardTitle {
+    font-size: 30px;
+  }
+}
+
+/* Card look */
+.homeCard {
+  position: relative;
+  height: 270px; /* taller like screenshot */
+  border-radius: 30px;
+  overflow: hidden;
+  border: 3px solid #bdbdbd; /* grey border */
+  background: #fff;
+  text-decoration: none;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bottom red overlay */
+.cardGradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background: linear-gradient(
+    to top,
+    rgba(255, 92, 92, 0.92),
+    rgba(255, 92, 92, 0)
+  );
+}
+
+/* Title is centered in screenshot */
+.cardTitle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 22px;
+  text-align: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 38px;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .cardsRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .topRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .langText {
+    font-size: 20px;
+  }
+  .cardsRow {
+    grid-template-columns: 1fr;
+  }
+  .homeCard {
+    height: 240px;
+  }
+  .cardTitle {
+    font-size: 32px;
+  }
+}

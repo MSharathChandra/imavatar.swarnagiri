@@ -1,0 +1,356 @@
+.flowPage {
+  background: #f4f4f4;
+  padding: 26px 34px 40px;
+}
+
+.flowSteps {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.flowStep {
+  border: none;
+  background: #f3f3f3;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #777;
+}
+
+.flowStep.active {
+  background: #0f172a;
+  color: #fff;
+}
+
+.flowTwoCol {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* LEFT */
+.pageTitle {
+  font-weight: 1000;
+  font-style: italic;
+  letter-spacing: 0.6px;
+  color: #111;
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+.devoteeCard {
+  background: #fff;
+  border-radius: 34px;
+  padding: 22px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: 18px;
+}
+
+.devoteeCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.devoteePill {
+  display: inline-flex;
+  background: #0f172a;
+  color: #fff;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+
+.devoteeClose {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: none;
+  background: #f4f4f4;
+  color: #999;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.devoteeClose:hover {
+  background: #ececec;
+  color: #666;
+}
+
+.devoteeGrid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  height: 56px;
+  border: none;
+  outline: none;
+  border-radius: 18px;
+  background: #f4f4f4;
+  padding: 0 18px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.field::placeholder {
+  color: #a9a9a9;
+}
+
+.fieldFull {
+  width: 100%;
+}
+
+.addMemberBtn {
+  width: 100%;
+  height: 64px;
+  border-radius: 999px;
+  border: 2px dashed #d4d4d4;
+  background: transparent;
+  color: #9a9a9a;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  margin: 10px 0 18px;
+}
+
+.contactCard {
+  background: #fff;
+  border-radius: 34px;
+  padding: 22px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.contactTitle {
+  color: #b0b0b0;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+/* RIGHT */
+.summaryCard {
+  background: #fff;
+  border-radius: 34px;
+  padding: 22px;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.12);
+  position: sticky;
+  top: 18px;
+}
+
+.summaryTitle {
+  font-weight: 1000;
+  font-style: italic;
+  letter-spacing: 0.6px;
+  font-size: 22px;
+  color: #111;
+  margin-bottom: 18px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 12px 0 10px;
+}
+
+.summaryLabel {
+  color: #b0b0b0;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  font-size: 12px;
+}
+
+.summaryAmount {
+  color: #ff6b63;
+  font-weight: 1000;
+  font-size: 38px;
+}
+
+.summarySmall {
+  color: #b0b0b0;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+.reviewBtn {
+  width: 100%;
+  height: 64px;
+  border: none;
+  border-radius: 18px;
+  background: #0f172a;
+  color: #fff;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.arrow {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+/* Steps 2-4 containers */
+.flowSingle {
+  display: flex;
+  justify-content: center;
+}
+
+.panel {
+  width: min(900px, 100%);
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.panelTitle {
+  font-weight: 1000;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.panelBody {
+  background: #f6f6f6;
+  border-radius: 12px;
+  padding: 16px;
+  color: #444;
+}
+
+.primaryBtn {
+  margin-top: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #0f172a;
+  color: #fff;
+  font-weight: 1000;
+  cursor: pointer;
+}
+
+/* Summary UI (Step 2) */
+.summaryPanel {
+  width: min(980px, 100%);
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.sumGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sumField {
+  background: #f4f4f4;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.sumLabel {
+  color: #8d8d8d;
+  font-weight: 900;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.sumValue {
+  font-weight: 900;
+  color: #222;
+}
+
+.sumInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 900;
+  font-size: 14px;
+  color: #222;
+}
+
+.tableCard {
+  border: 1px solid #e3e3e3;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.tableHead,
+.tableRow,
+.tableTotalRow {
+  display: grid;
+  grid-template-columns: 90px 1fr 140px;
+  gap: 10px;
+  padding: 12px;
+  align-items: center;
+}
+
+.tableHead {
+  background: #f4f4f4;
+  font-weight: 900;
+  color: #444;
+}
+
+.tableRow {
+  background: #fff;
+  border-top: 1px solid #eee;
+  color: #222;
+  font-weight: 700;
+}
+
+.tableTotalRow {
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.tRight {
+  text-align: right;
+}
+.tBold {
+  font-weight: 1000;
+}
+
+.termsRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 6px;
+  color: #666;
+  font-weight: 700;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .flowTwoCol {
+    grid-template-columns: 1fr;
+  }
+  .summaryCard {
+    position: relative;
+    top: 0;
+  }
+  .devoteeGrid {
+    grid-template-columns: 1fr;
+  }
+  .sumGrid2 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,203 @@
+.footerOuter {
+  margin-top: 1rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image as its own layer so we can grayscale it only */
+.footerBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%); /* grayscale background image */ /* [web:72] */
+  transform: scale(1.02); /* prevents tiny edge gaps */
+}
+
+.footerOverlay {
+  position: relative;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 56px 0 60px;
+}
+
+.footerContainer {
+  width: 100%;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.footerCol {
+  min-width: 240px;
+}
+.rightCol {
+  min-width: 360px;
+}
+
+.footerH {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.footerList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerItem {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footerItem:hover {
+  text-decoration: underline;
+}
+
+.footerText {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+}
+
+.twoList {
+  display: flex;
+  gap: 80px;
+}
+
+.listCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.brandMark {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+.brandName {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.contactLine {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.contactLabel {
+  font-weight: 500;
+}
+
+.contactValue {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+}
+.contactValue:hover {
+  text-decoration: underline;
+}
+
+.addrLine {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.socialBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.divider {
+  margin-top: 36px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.copy {
+  margin-top: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 13px;
+}
+
+.bottomLinks {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 44px;
+  flex-wrap: wrap;
+}
+
+.bottomLinkText {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.spacer10 {
+  height: 10px;
+}
+.spacer18 {
+  height: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .footerCol,
+  .rightCol {
+    min-width: unset;
+  }
+  .twoList {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footerContainer {
+    padding: 0 18px;
+  }
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+}

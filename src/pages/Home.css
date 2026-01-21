@@ -1,0 +1,76 @@
+.home {
+  width: 100%;
+}
+
+/* Each carousel item */
+.heroSlide {
+  position: relative;
+}
+
+/* Background image */
+.heroImg {
+  height: 70vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay for readability */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Text block (left aligned like your screenshot) */
+.heroContent {
+  position: absolute;
+  left: 6%;
+  top: 35%;
+  transform: translateY(-50%);
+  text-align: left;
+  color: #fff;
+  max-width: 520px;
+  z-index: 2;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 56px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.heroSubtitle {
+  margin-top: 14px;
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+/* CTA button */
+.heroBtn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.heroBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 34px;
+  }
+  .heroContent {
+    max-width: 92%;
+    top: 40%;
+  }
+}

@@ -1,0 +1,67 @@
+.abRoot {
+  height: 32px;
+  width: 100%;
+  display: flex;
+}
+
+.abLeft {
+  width: 500px;
+  background: #ff4b4b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.abLeftText {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.abRight {
+  flex: 1;
+  background: #ffe5d9;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Two copies scrolling together = seamless loop */
+.abTrack {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: abScroll 20s linear infinite; /* speed */
+}
+
+/* each copy takes full viewport-right width effectively */
+.abItem {
+  padding: 0 8px;
+  color: #e5402b;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Move by exactly 50% because we duplicated content twice */
+@keyframes abScroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Optional: responsive left width */
+@media (max-width: 700px) {
+  .abLeft {
+    width: 240px;
+  }
+  .abLeftText,
+  .abItem {
+    font-size: 13px;
+  }
+}
