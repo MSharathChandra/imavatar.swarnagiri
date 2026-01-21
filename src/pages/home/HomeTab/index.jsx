@@ -10,7 +10,7 @@ import hundiImg from "../../../assets/dashboard/cardsimages/seva.png";
 // NEW 3 cards images (replace paths with your real files)
 import sevaDipImg from "../../../assets/dashboard/cardsimages/dharshan.png";
 import donationImg from "../../../assets/dashboard/cardsimages/seva.png";
-import sevakuluImg from "../../../assets/dashboard/cardsimages/seva.png";
+// import sevakuluImg from "../../../assets/dashboard/cardsimages/seva.png";
 
 const cardsTop = [
   { title: "Seva", img: sevaImg, to: "/services" },
