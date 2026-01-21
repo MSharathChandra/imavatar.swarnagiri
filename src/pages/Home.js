@@ -1,7 +1,15 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+// src/pages/home/Home.jsx  (or wherever your Home component lives)
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
+
+// Swiper core + required modules styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+
 import "./Home.css";
-// import TabsBar from "./home/TabsBar.jsx";
 
 import slide1 from "../assets/dashboard/carousel/swarnagiri.png";
 import slide2 from "../assets/dashboard/carousel/Sree-Venkateswara-Swamy-Devasthanam-Swarnagiri-20.jpg";
@@ -21,38 +29,66 @@ const slides = [
     ctaText: "BOOK SEVA",
     ctaHref: "/seva-booking",
   },
+  // You can easily add more slides here later
 ];
 
 export default function Home() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
     <div className="home">
-      <Carousel
-        showThumbs={false}
-        showStatus={false}
-        infiniteLoop
-        autoPlay
-        interval={4500}
-        swipeable
-        emulateTouch
+      <Swiper
+        modules={[Autoplay, Pagination, Navigation, EffectFade]}
+        spaceBetween={0}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{
+          delay: 4500,
+          disableOnInteraction: false,
+        }}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
+        speed={800}
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+        }}
+        navigation={true}
+        onSwiper={(swiper) => {
+          if (swiper.navigation) {
+            swiper.navigation.prevEl = prevRef.current;
+            swiper.navigation.nextEl = nextRef.current;
+            swiper.navigation.update();
+          }
+        }}
+        style={{
+          "--swiper-navigation-color": "white",
+          "--swiper-navigation-size": "60px",
+        }}
+        className="heroSwiper"
       >
-        {slides.map((s) => (
-          <div key={s.title} className="heroSlide">
-            <img className="heroImg" src={s.imageUrl} alt={s.title} />
-
-            <div className="heroOverlay" />
-
-            <div className="heroContent">
-              <h1 className="heroTitle">{s.title}</h1>
-              <p className="heroSubtitle">{s.subtitle}</p>
-
-              <a className="heroBtn" href={s.ctaHref}>
-                {s.ctaText}
-              </a>
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="heroSlide">
+              <img
+                className="heroImg"
+                src={slide.imageUrl}
+                alt={slide.title}
+                loading="lazy"
+              />
+              <div className="heroOverlay" />
+              <div className="heroContent">
+                <h1 className="heroTitle">{slide.title}</h1>
+                <p className="heroSubtitle">{slide.subtitle}</p>
+                <a className="heroBtn" href={slide.ctaHref}>
+                  {slide.ctaText}
+                </a>
+              </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </Carousel>
-      {/* <TabsBar /> */}
+      </Swiper>
     </div>
   );
 }

@@ -1,76 +1,173 @@
+/* src/pages/home/Home.css */
+
 .home {
   width: 100%;
+  position: relative;
 }
 
-/* Each carousel item */
+/* Swiper main container */
+.heroSwiper {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+/* Single slide wrapper */
 .heroSlide {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 /* Background image */
 .heroImg {
-  height: 70vh;
   width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-/* Dark overlay for readability */
+/* Gradient overlay for text readability */
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* Text block (left aligned like your screenshot) */
+/* Text & button container */
 .heroContent {
   position: absolute;
-  left: 6%;
-  top: 35%;
-  transform: translateY(-50%);
-  text-align: left;
-  color: #fff;
-  max-width: 520px;
+  inset: 0;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 6%;
+  color: white;
+  max-width: 520px;
 }
 
 .heroTitle {
   margin: 0;
-  font-size: 56px;
-  line-height: 1.05;
+  font-size: clamp(2.5rem, 6vw, 56px);
   font-weight: 800;
-  letter-spacing: 0.5px;
+  line-height: 1.05;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .heroSubtitle {
   margin-top: 14px;
-  font-size: 18px;
+  font-size: clamp(1.1rem, 3vw, 18px);
   opacity: 0.95;
+  font-weight: 400;
 }
 
-/* CTA button */
+/* Call-to-action button */
 .heroBtn {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 14px 28px;
   border-radius: 999px;
-  border: 2px solid #fff;
-  color: #fff;
-  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid white;
+  color: white;
   font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
 }
 
 .heroBtn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: white;
+  color: #333;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive */
+/* Custom navigation arrows */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+.custom-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.swiper-button-prev {
+  left: 20px;
+}
+
+.swiper-button-next {
+  right: 20px;
+}
+
+/* Pagination dots styling */
+.heroSwiper .swiper-pagination-bullet {
+  background: white;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+}
+
+.heroSwiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: white;
+  width: 28px;
+  border-radius: 999px;
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  .heroTitle {
-    font-size: 34px;
-  }
   .heroContent {
-    max-width: 92%;
-    top: 40%;
+    padding-left: 5%;
+    max-width: 90%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .heroTitle {
+    font-size: clamp(2rem, 8vw, 38px);
+  }
+
+  .custom-arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+  }
+
+  .swiper-button-prev {
+    left: 12px;
+  }
+  .swiper-button-next {
+    right: 12px;
   }
 }
